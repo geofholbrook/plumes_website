@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<script src="jquery-1.9.1.min.js">
+		</script>
+		
+		<script type="text/javascript" src="http://www.bandsintown.com/javascripts/bit_widget.js"></script>
+		<script>
+		
+		var fadepages = ["ABOUT", "TOUR", "PHOTOS"]
+				
+		$(document).ready(function(){
+		
+		  $(".title").fadeIn(300, function() {
+		  	  $(".menu").fadeIn(300, function() {
+		  	  		$("#bg").fadeIn(750); 
+		  	  			} ) } )	;
+					
+		  
+		
+		  $("td").click(function(){
+		  
+		  	var id = $(this).text();
+
+			$("td").each(function(){
+				if ($(this).text() == id)
+					$(this).css({ 'font-weight': 'bold' })
+				else
+					$(this).css({ 'font-weight': 'normal' }) });
+		  	
+		  	// fadebackground?
+			if ( fadepages.indexOf(id) != -1) 
+			$("#bg").fadeTo(1000, 0.5 )
+			else
+			$("#bg").fadeTo(750, 1);
+			
+			
+		  	
+		   // fade all divs out, except for chosen one which fades in
+		  	$(".page").each(function() 
+		  					{
+		  					   if ($(this).attr("id") == id)
+								  $(this).fadeIn(1000);
+							   else
+								  $(this).fadeOut(500);
+							})
+		  });
+		});
+		
+		</script>
+
+		<style type="text/css">
+			body {
+					/* background-image:url('web-background.jpg');
+					background-position:center -100px; 
+					background-repeat:repeat-y;	  */
+					background-color:rgb(0, 0, 75);
+				 }
+	 
+			#main 
+				{
+					position:relative;
+					margin-left:auto;
+					margin-right:auto;
+					width:1100px;
+					font:48px arial,sans-serif;
+					color:white;
+				}
+								 
+			#bg {	
+				position:absolute;
+				width:1100px;			
+				margin-left:auto;
+				margin-right:auto;
+				bottom:0;
+				display:none;
+				}
+				
+			#bgimg {
+				width:1100px;
+					}	
+				
+			div.page
+				{
+					display:none;
+					position:absolute;
+					font:14px arial;
+					
+					color:white;
+					left:50px;
+					top:200px;
+				}
+				
+				 
+			p.title
+				{
+					position:relative;
+					left:0px;
+					top:0px;
+					display:none;
+				}
+				
+			table.menu
+				{
+					font:22px arial,sans-serif;
+					color:white;
+					position:relative;
+					left:-20px;
+					top:-50px;
+					display:none;
+				}
+				
+			#ABOUT {
+				width: 400px;
+				text-align: justify
+					}							 
+		</style>
+	</head>
+
+	
+
+	<body>
+		<center>
+		<div id="bg">
+			<img id="bgimg" src="http://www.plumesensemble.com/newsite/web-background.jpg"/>
+		</div>
+		</center>
+		
+
+	<div id="main">
+		
+		
+		<p class="title">
+			PLUMES
+		</p>
+		
+		<table class="menu" cellspacing="20">
+			<tr >
+				<td>ABOUT</td>
+				<td>LISTEN</td>
+				<td>TOUR</td>
+				<td>PRESS</td>
+				<td>PHOTOS</td>
+				<td>LINKS</td>
+				<td><i> PLUMES ENSEMBLE </i></td>
+			</tr>
+		</table>
+		
+		
+		<div id="social" style="position:fixed; top:0px; right:0px; float:right">
+			<a href="http://www.facebook.com/plumesensemble/app_178091127385">      
+		<img src="http://www.plumesensemble.com/images/findus.jpg" width="175"></img></a>
+		 
+		</div>
+
+
+
+	
+			<div class="page" id="PHOTOS">
+				<img src="coney.jpg" width="300"> </img>
+			</div>
+	
+			<div class="page" id="ABOUT" width="450">
+				<p>Plumes is the new vehicle for singer-songwriter Veronica
+				Charnley, composer Geof Holbrook and harpist Eveline
+				Grégoire-Rousseau, who for five years and two albums have
+				performed and recorded as Flotilla. With a new self-titled
+				album, they are breaking out the classical music chops, with
+				arrangements for string quartets, brass quintets, clarinets and
+				violas, and one eight-minute track inspired by the Greek myth of
+				Hero and Leander, with a full orchestra. Released in July 2012,
+				the album received glowing reviews from publications such as
+				Exclaim! and Deli Magazine, and it has enjoyed high rotation on
+				CBC radio.</p>
+		
+				<p>The band has toured Canada and the U.S. and has played festivals
+				such as NXNE, Wolfe Island Festival, Evolve, Brain Cave, and
+				Pitter Patter. They’ve played alongside bands such as Afuche,
+				Glass Ghost, Memory House, Valery Gore and The Acorn.</p>
+
+			</div>
+	
+			<div class="page" id="LISTEN">
+				<iframe width="300" height="355" style="position: relative;
+				display: block; width: 300px; height: 385px;"
+				src="http://bandcamp.com/EmbeddedPlayer/v=2/album=3530073123/
+				size=grande2/bgcol=FFFFFF/linkcol=4285BB/"
+				allowtransparency="true" frameborder="0"><a
+				href="http://plumesensemble.bandcamp.com/album/plumes">Plumes by
+				Plumes</a></iframe>
+
+			</div>
+
+			<div class="page" id="TOUR">
+			</div>	
+
+	
+	</div>
+	
+	<script type="text/javascript">
+		var widget = new BIT.Widget({"artist": "Plumes", "div_id": "TOUR"});
+		widget.insert_events();
+	</script>
+	
+
+
+					
+	</body>
+
+</html>
