@@ -285,6 +285,33 @@
 			</div>
 
 			<div class="page" height="500" id="TOUR">
+				
+					<?php
+			            $hostname = "plumesshows.db.9039704.hostedresource.com";
+			            $password = "ge055rGe055r!";
+			            $usertable = "shows";
+			            $yourfield = "city";
+
+			            mysql_connect($hostname, "plumesshows", $password) OR DIE ("Unable to 
+			            connect to database! Please try again later.");
+			            mysql_select_db("plumesshows");
+
+			            $query = "SELECT * FROM $usertable";
+			            $result = mysql_query($query);
+						
+			            if ($result) {
+			                while($row = mysql_fetch_array($result)) {
+			                    $name = $row["$yourfield"];
+			                    echo "Name: $name<br>";
+			                }
+			            }
+
+			            ?>
+		       
+				
+				
+				
+				
 			</div>	
 			
 			<div class="page" id="REVIEWS" width="450" style="
@@ -333,11 +360,12 @@
 	
 	</div>
 	
+<!-- the old bandsintown code >
 	<script type="text/javascript">
 		var widget = new BIT.Widget({"artist": "Plumes", "div_id": "TOUR"});
 		widget.insert_events();
 	</script>
-	
+<-->
 
 
 					
