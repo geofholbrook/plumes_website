@@ -172,7 +172,13 @@
 
 	#ABOUT {
 		width: 400px;
-		text-align: justify
+		text-align: justify;	
+		background-color:white; 
+		color:black; 
+		opacity:0.8; 
+		padding:10px;
+		font-size:14px; 
+		font-family:Arial, arial, sans-serif;		
 	}	
 
 	.menuitem {
@@ -264,9 +270,7 @@
 
 		</div>
 
-		<div class="page" id="ABOUT" width="450" 
-		style="background-color:white; color:black; opacity:0.8; padding:10px;
-		font-size:14px; font-family:Arial, arial, sans-serif;">
+		<div class="page" id="ABOUT" width="450"> 
 
 		<?php 
 			$fh = fopen("data/about.txt", 'r');
