@@ -148,6 +148,22 @@
 		top:150px;
 	}
 
+	div.pressitem
+	{
+		position:relative; 
+		background-color:white; 
+		color:black; 
+		opacity:0.8; 
+		padding:10px;
+		padding-bottom:2px;
+		margin:20px;
+	}
+	
+	div.pressitem a
+	{
+ 		color:blue;
+	}
+		
 
 	p.title
 	{
@@ -208,13 +224,9 @@
 	<?php
     // connect to database
 
-  //Variables for connecting to your database.
-            //These variable values come from your hosting account.
             $hostname = "plumesdata.db.9039704.hostedresource.com";
             $username = "plumesdata";
-            $dbname = "plumesdata";
-
-            //These variable values need to be changed by you before deploying
+			$dbname = $username;
             $password = "ge055rGe055r!";
 
             //Connecting to your database
@@ -349,7 +361,7 @@
 					<table>
 
 					<?php
-					/*
+					
 					$query = "SELECT * FROM shows ORDER BY date";
 					$result = mysql_query($query);
 
@@ -367,7 +379,7 @@
 							</td>";
 						}
 					}
-					*/
+					
 					?>   
 				</table>
 			</td>
@@ -375,21 +387,54 @@
 
 	</div>	
 
-	<div class="page" id="PRESS" width="450" style="width: 400px; text-align: justify">
+	<div class="page" id="PRESS" width="900" style="width: 900px; text-align: justify">
 
+		<table>
+			<tr>
+		
 		<?php
-		/*		
-			$query2 = "SELECT * FROM press WHERE include_excerpt = 1 ORDER BY site_order desc";
-			$result2 = mysql_query($query2);
+				
+			function make_press_column($col_num)   // column number is 0 or 1
+			{
 			
-			if ($result2) {
-				echo "YAYYYA";
-				while($row = mysql_fetch_array($result2)) {
-					echo nl2br($row["excerpt"]);
+				$query = "SELECT * FROM press WHERE include_excerpt = 1 AND site_order % 2 = $col_num 
+							AND site_order > 0 	ORDER BY site_order";
+				$result = mysql_query($query);
+				
+				if ($result) 
+				{
+				
+					echo "<td>";
+
+					while($row = mysql_fetch_array($result)) {
+					
+						$excerpt = $row["Excerpt"];
+						$publication = $row["Publication"];
+						$link = $row["Link"];
+					
+						echo "<div class=\"pressitem\">";
+					
+							echo "\"", nl2br($row["Excerpt"]), "...\" <br>";
+						
+							echo "<div align=\"right\">";
+						
+								// create link to press item
+								echo "<a href=\"$link\" target=\"_blank\">$publication</a>";
+						
+							echo "</div>";
+					
+						echo "</div>";
+					}
+					echo "</td>";
 				}
 			}
-			*/
+			
+			make_press_column(1);
+			make_press_column(0);
+			
 		?>
+			</tr>
+		<table>
 
 </div>
 
