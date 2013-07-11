@@ -208,13 +208,19 @@
 	<?php
     // connect to database
 
-	$hostname = "plumesdata.db.9039704.hostedresource.com";
-	$username_database = "plumesdata";
+  //Variables for connecting to your database.
+            //These variable values come from your hosting account.
+            $hostname = "plumesdata.db.9039704.hostedresource.com";
+            $username = "plumesdata";
+            $dbname = "plumesdata";
 
-	mysql_connect($hostname, $username_database, "ge055rGe055r!") OR DIE ("Unable to 
-		connect to database! Please try again later.");
+            //These variable values need to be changed by you before deploying
+            $password = "ge055rGe055r!";
 
-	mysql_select_db($username_database);  
+            //Connecting to your database
+            mysql_connect($hostname, $username, $password) OR DIE ("Unable to 
+            connect to database! Please try again later.");
+            mysql_select_db($dbname);
 	
 	?>
 
@@ -343,7 +349,7 @@
 					<table>
 
 					<?php
-
+					/*
 					$query = "SELECT * FROM shows ORDER BY date";
 					$result = mysql_query($query);
 
@@ -361,7 +367,7 @@
 							</td>";
 						}
 					}
-
+					*/
 					?>   
 				</table>
 			</td>
