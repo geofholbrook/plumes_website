@@ -14,7 +14,7 @@
 
 	var fadelevel = {ABOUT: 0.5, LISTEN: 0.9, PHOTOS: 0.25, TOUR: 0.7, PRESS: 0.6 };
 
-	var debug_page = "ABOUT";
+	var debug_page = "PRESS";
 
 
 
@@ -65,8 +65,7 @@
 			$(".menu").fadeIn(0);
 			$("#bg").fadeIn(0);
 
-			fadeCurtain(debug_page);
-			fadeDivs(debug_page);
+			switchPage(debug_page);
 		}
 		else
 		{
@@ -205,6 +204,21 @@
 
 <body link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
 
+
+	<?php
+    // connect to database
+
+	$hostname = "plumesdata.db.9039704.hostedresource.com";
+	$username_database = "plumesdata";
+
+	mysql_connect($hostname, $username_database, "ge055rGe055r!") OR DIE ("Unable to 
+		connect to database! Please try again later.");
+
+	mysql_select_db($username_database);  
+	
+	?>
+
+
 	<script type="text/javascript">
 
 	var _gaq = _gaq || [];
@@ -328,15 +342,9 @@
 				<td id="pastshows">
 					<table>
 
-						<?php
-					$hostname = "plumesshows.db.9039704.hostedresource.com";
-					$usertable = "shows";
+					<?php
 
-					mysql_connect($hostname, "plumesshows", "ge055rGe055r!") OR DIE ("Unable to 
-						connect to database! Please try again later.");
-					mysql_select_db("plumesshows");
-
-					$query = "SELECT * FROM $usertable ORDER BY date";
+					$query = "SELECT * FROM shows ORDER BY date";
 					$result = mysql_query($query);
 
 					if ($result) {
@@ -354,7 +362,7 @@
 						}
 					}
 
-					?>
+					?>   
 				</table>
 			</td>
 		</table>
@@ -363,27 +371,19 @@
 
 	<div class="page" id="PRESS" width="450" style="width: 400px; text-align: justify">
 
-	<?php
-		$hostname = "plumesshows.db.9039704.hostedresource.com";
-		$usertable = "shows";
-
-		mysql_connect($hostname, "plumesshows", "ge055rGe055r!") OR DIE ("Unable to 
-			connect to database! Please try again later.");
-		mysql_select_db("plumesshows");
-
-		$query = "SELECT *  FROM press WHERE site_order > 0 AND include_excerpt = 1 ORDER BY site_order DESC";
-		$result = mysql_query($query);
-
-		if ($result) {
-			while($row = mysql_fetch_array($result)) {
-				if ($row["include_excerpt"] == 1)
-				{
-					echo $row["excerpt"];
+		<?php
+		/*		
+			$query2 = "SELECT * FROM press WHERE include_excerpt = 1 ORDER BY site_order desc";
+			$result2 = mysql_query($query2);
+			
+			if ($result2) {
+				echo "YAYYYA";
+				while($row = mysql_fetch_array($result2)) {
+					echo nl2br($row["excerpt"]);
 				}
 			}
-		}
-
-	?>
+			*/
+		?>
 
 </div>
 
