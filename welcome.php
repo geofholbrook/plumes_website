@@ -13,7 +13,7 @@
 
 	var fadelevel = {ABOUT: 0.5, LISTEN: 0.9, PHOTOS: 0.25, TOUR: 0.7, PRESS: 0.6 };
 
-	var debug_page = "TOUR";
+	var debug_page = null;
 
 
     
