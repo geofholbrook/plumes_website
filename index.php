@@ -194,7 +194,9 @@
 		padding:10px;
 		font-size:14px; 
 		font-family:Arial, arial, sans-serif;		
-	}	
+	}
+	
+	#ABOUT a { color:blue; }	
 
 	.menuitem {
 		cursor: pointer;
