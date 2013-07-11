@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 	<script src="jquery-1.9.1.min.js">
 	</script>
@@ -13,19 +15,19 @@
 
 	var fadelevel = {ABOUT: 0.5, LISTEN: 0.9, PHOTOS: 0.25, TOUR: 0.7, PRESS: 0.6 };
 
-	var debug_page = null;
+	var debug_page = "ABOUT";
 
 
-    
+
 	function menuBold(id) {
 		$(".menuitem").each(function(){
-										if ($(this).text() == id)
-										$(this).css({ 'font-weight': 'bold' })
-										else
-										$(this).css({ 'font-weight': 'normal' }) 
-									  });
+			if ($(this).text() == id)
+			$(this).css({ 'font-weight': 'bold' })
+			else
+			$(this).css({ 'font-weight': 'normal' }) 
+		});
 	}		
-	
+
 
 	function fadeCurtain(id) {
 		if (jQuery.support.opacity)  // curtain fading doesn't work in IE?!
@@ -47,12 +49,12 @@
 			$(this).fadeOut(500);
 		})
 	}
-	
+
 	function switchPage(id) { 
 		menuBold(id);
 		fadeCurtain(id);
 		fadeDivs(id);
-		}
+	}
 
 
 
@@ -72,17 +74,17 @@
 			$(".title").fadeIn(300, function() {
 				$(".menu").fadeIn(300, function() {
 					$("#bg").fadeIn(750); 
-					} ) } )	;  
+					} ) } )	;
 		}
 
 		$(".menuitem").click(function(){
 
 			var id = $(this).text();
 			switchPage(id);
-		});
-		
-		
+		}); 
+	
 	});
+		
 
 	</script>
 
@@ -178,7 +180,7 @@
 	}
 
 	table.shows {
-			font:14px arial,sans-serif;
+		font:14px arial,sans-serif;
 	}
 
 	th {
@@ -190,7 +192,7 @@
 		vertical-align:top;
 	}
 
-	
+
 	</style>
 </head>
 
@@ -210,234 +212,179 @@
 		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(ga, s);
 		})();
+	
 
 	</script>
 
-		<div id="curtain"> </div>
+	<div id="curtain"> </div>
 
-		<div id="main">
-
-
-			<div class="title">
-				PLUMES	
-			</div>
-
-			<table class="menu" cellspacing="20">
-				<tr >
-					<td class="menuitem">ABOUT</td>
-					<td class="menuitem">LISTEN</td>
-					<td class="menuitem">TOUR</td>
-					<td class="menuitem">PRESS</td>
-					<td class="menuitem">PHOTOS</td>
-					<td><a href="http://www.facebook.com/plumesensemble" target="blank">
-						<img height="40" width="40" src="images/f_logo.jpg"></img>
-					</a></td>
-					<td><a href="http://www.twitter.com/plumesensemble" target="blank">
-						<img height="40" width="40" src="images/t_logo.jpg"></img>
-					</a></td>
-					<td><a href="http://www.plumesensemble.com/chambermusic" target="blank">
-						<i>PLUMES ENSEMBLE</i>
-					</a></td>
-				</tr>
-			</table>
+	<div id="main">
 
 
-			<!--<div id="social" style="position:fixed; top:0px; right:0px; float:right">
-			<a href="http://www.facebook.com/plumesensemble/app_178091127385">      
-			<img src="http://www.plumesensemble.com/images/findus.jpg" width="175"></img></a>
-
-</div>
--->
-
-
-
-
-<div class="page" id="PHOTOS">
-	<div width="25"></div>
-
-	<a href="images/PLUMES-PRESS3.jpg" target="_blank">
-		<img src="images/PLUMES-PRESS3-THUMB.jpg" height="200"> </img>  </a>
-
-		<a href="images/PLUMES-PRESS1.jpg" target="_blank">
-			<img src="images/PLUMES-PRESS1-THUMB.jpg" height="200"> </img>  </a>
-
-			<a href="images/PLUMES-PRESS2.jpg" target="_blank">
-				<img src="images/PLUMES-PRESS2-THUMB.jpg" height="200"> </img>  </a>
-				<br>
-				<br>
-				(click on an image for hi-res version)
-
-			</div>
-
-			<div class="page" id="ABOUT" width="450" 
-			style="background-color:white; color:black; opacity:0.8; padding:10px;
-			font-size:14px; font-family:Arial, arial, sans-serif;">
-
-			<p>Plumes is a hybrid pop/classical group originating from
-				Montr&eacute;al, whose recent "homes away from homes" have included
-				New York City and Paris. Singer/guitarist and songwriter Veronica Charnley,
-				former frontperson for Canadian indie rock group Flotilla, is joined
-				by musicians from diverse backgrounds, including composer and multi-instrumentalist
-				Geof Holbrook, harpist &Eacute;veline Gr&eacute;goire-Rousseau, drummer Noel Webb (Skydiggers) and an 
-				expanding cast of orchestral players.</p>
-
-				<p>On the group's eponymous full-length, released in July 2012, 
-					Charnley's inventive songwriting is supported by arrangements for
-					string quartets, brass quintets, clarinets and
-					violas, and even a full orchestra in a central eight-minute track 
-					inspired by the Greek myth of Hero and Leander. 
-					The record received glowing reviews from publications such as
-					Exclaim! and Deli Magazine, and it been broadcast extensively on CBC Radio.</p>
-
-					<p>The band has performed in festivals such as NXNE, Wolfe Island Festival, 
-						Evolve, Brain Cave, and Pitter Patter. In May 2013, Plumes Ensemble, 
-						the chamber music offshoot of Plumes, will tour the West Coast of Canada,
-						starting with the Ritornello Festival in Saskatoon.</p>
-
-					</div>
-
-					<div class="page" id="LISTEN">
-
-						<center>
-							<div>
-								<iframe width="400" height="100" style="position: relative; 
-								display:block; width: 400px; height: 100px;"
-								src="http://bandcamp.com/EmbeddedPlayer/v=2/album=3530073123/size=venti/
-								bgcol=FFFFFF/linkcol=4285BB/" allowtransparency="true"
-								frameborder="0"><a
-								href="http://plumesensemble.bandcamp.com/album/plumes">Plumes(2012)</a>
-							</iframe>
-							<br>	
-
-							<a href="https://itunes.apple.com/ca/artist/plumes/id583281788" target="blank">
-								<img src="images/itunes.jpg"></img>
-							</a>
-
-						</div>
-					</center>
-
-					<br>
-
-					<div height="20"></div>
-					<iframe src="http://player.vimeo.com/video/46696626?title=0&amp;byline=0&amp;portrait=0&amp;
-					badge=0&amp;color=ffffff" width="500" height="281" frameborder="0" 
-					webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
-
-					<iframe width="500" height="281" src="http://www.youtube.com/embed/8C7TPDYa8Ho" 
-					frameborder="0" allowfullscreen></iframe>
-					<br>	
-				</div>
-
-				<div class="page" height="500" id="TOUR">
-
-					<table class="shows">
-						<tr height="30">
-							<th width="400">UPCOMING SHOWS</th>
-							<th>RECENT SHOWS</th>
-						</tr>
-
-						<tr class="top" height="700">
-							<td>
-								<p>
-									Fall 2013: (recording)<br>
-									<br>
-									Spring 2014: shows in Canada, USA <br> and Europe (TBA!)
-								</p>
-							</td>
-
-							<td id="pastshows">
-								<table>
-									<?php
-								$hostname = "plumesshows.db.9039704.hostedresource.com";
-								$usertable = "shows";
-
-								mysql_connect($hostname, "plumesshows", "ge055rGe055r!") OR DIE ("Unable to 
-									connect to database! Please try again later.");
-								mysql_select_db("plumesshows");
-
-								$query = "SELECT * FROM $usertable ORDER BY date";
-								$result = mysql_query($query);
-
-								if ($result) {
-									while($row = mysql_fetch_array($result)) {
-										$city = $row["city"];
-										$area = $row["area"];
-										$date = date('M d', strtotime($row["date"]));
-										$venue = $row["venue"];
-
-										echo "<tr>
-											<td width=\"70\">$date</td>
-										<td width=\"150\">$city, $area</td>
-										<td>$venue</td>
-										</td>";
-									}
-								}
-
-								?>
-							</table>
-						</td>
-					</table>
-
-
-
-
-
-				</div>	
-
-				<div class="page" id="PRESS" width="450" style="
-				width: 400px;
-				text-align: justify
-				">
-
-				<div style="position:relative; left: 50px; 
-				background-color:white; color:black; opacity:0.8; padding:10px">
-				&ldquo;The ambitious musical partnership has reached sublime new heights
-				on their debut as Plumes. With an eight-minute, Debussy-inspired,
-				fully-orchestrated centrepiece based upon the Greek myth of Hero and
-				Leander, composer Holbrook and singer/songwriter Charnley are operating
-				near Sufjan Stevens territory, but have also retained a sense of raw
-				rock energy.&rdquo;
-				<br><br>&nbsp;<i> Scott A. Gray, Exclaim! Magazine</i>
-			</div> 
-
-			<div style="position:relative; left: 250px; top: 20px; 
-			background-color:white; color:black; opacity:0.8; padding:10px">
-			&ldquo;Plumes&#8217;
-			self-titled LP is a carefully constructed Baroque masterpiece, filled
-			with orchestrated meditations on the peaks and valleys of love. This duo
-			have written life's epic soundtrack, and their vision can&#8217;t be
-			overstated. I suggest you park yourself immediately and pop this magic
-			in your ears. Plumes ... I don&#8217;t know where you came from, but thank you.&rdquo;
-			<br><br>&nbsp;<i> Mike Levine, The NYC Deli Magazine </i>
+		<div class="title">
+			PLUMES	
 		</div>
 
-		<div style="position:relative; left: 450px; top: 40px; 
-		background-color:white; color:black; opacity:0.8; padding:10px">
-		&ldquo;This musical duo have
-		created an ambitious, textured, and at times epic record. With its
-		assortment of strings, various brass arrangements, guitars, and so much
-		more, Plumes is a glorious crossover of classical music grace and
-		indie-pop catchiness. <i>Hero and Leander</i> treads on Sufjan Stevens&#8217; Age
-		of Adz epic territory. As you allow the completeness and vitality of
-		Plumes&#8217; record to wash over you, you too will realize you could be
-		listening to the next big band to come out of Montreal.&rdquo;
-		<br><br>&nbsp;<i>Laura Stanley, Grayowl Point </i>
+		<table class="menu" cellspacing="20">
+			<tr >
+				<td class="menuitem">ABOUT</td>
+				<td class="menuitem">LISTEN</td>
+				<td class="menuitem">TOUR</td>
+				<td class="menuitem">PRESS</td>
+				<td class="menuitem">PHOTOS</td>
+				<td><a href="http://www.facebook.com/plumesensemble" target="blank">
+					<img height="40" width="40" src="images/f_logo.jpg"></img>
+				</a></td>
+				<td><a href="http://www.twitter.com/plumesensemble" target="blank">
+					<img height="40" width="40" src="images/t_logo.jpg"></img>
+				</a></td>
+				<td><a href="http://www.plumesensemble.com/chambermusic" target="blank">
+					<i>PLUMES ENSEMBLE</i>
+				</a></td>
+			</tr>
+		</table>
+
+		<div class="page" id="PHOTOS">
+			<div width="25"></div>
+
+			<a href="images/PLUMES-PRESS3.jpg" target="_blank">
+				<img src="images/PLUMES-PRESS3-THUMB.jpg" height="200"> </img> 
+			</a>
+
+			<a href="images/PLUMES-PRESS1.jpg" target="_blank">
+				<img src="images/PLUMES-PRESS1-THUMB.jpg" height="200"> </img>  
+			</a>
+
+			<a href="images/PLUMES-PRESS2.jpg" target="_blank">
+				<img src="images/PLUMES-PRESS2-THUMB.jpg" height="200"> </img>  
+			</a>
+			<br>
+			<br>
+			(click on an image for hi-res version)
+
+		</div>
+
+		<div class="page" id="ABOUT" width="450" 
+		style="background-color:white; color:black; opacity:0.8; padding:10px;
+		font-size:14px; font-family:Arial, arial, sans-serif;">
+
+		<?php 
+			$fh = fopen("data/about.txt", 'r');
+			$aboutText = fread($fh, 25000);
+
+		    echo nl2br($aboutText);
+		 ?>
+
 	</div>
 
+
+	<div class       = "page" id="LISTEN">
+
+		<center>
+			<div>
+				<iframe style="border: 0; width: 100%; height: 120px;" src="http://bandcamp.com/EmbeddedPlayer/album=3530073123/size=medium/bgcol=ffffff/linkcol=0687f5/t=3/transparent=true/" seamless><a href="http://plumesensemble.bandcamp.com/album/plumes">Plumes by Plumes</a></iframe>
+				<br>	
+
+				<a href        = "https://itunes.apple.com/ca/artist/plumes/id583281788" target="blank">
+					<img src      = "images/itunes.jpg"></img>
+				</a>
+
+			</div>
+		</center>
+
+		<br>
+
+		<div height      = "20"></div>
+		<iframe src      = "http://player.vimeo.com/video/46696626?title=0&amp;byline=0&amp;portrait=0&amp;
+		badge            = 0&amp;color=ffffff" width="500" height="281" frameborder="0" 
+		webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+
+		<iframe width    = "500" height="281" src="http://www.youtube.com/embed/8C7TPDYa8Ho" 
+		frameborder      = "0" allowfullscreen></iframe>
+		<br>	
+	</div>
+
+
+	<div class="page" height="500" id="TOUR">
+
+		<table class="shows">
+			<tr height="30">
+				<th width="400">UPCOMING SHOWS</th>
+				<th>RECENT SHOWS</th>
+			</tr>
+
+			<tr class="top" height="700">
+				<td>
+					<p>
+						Fall 2013: (recording)<br>
+						<br>
+						Spring 2014: shows in Canada, USA <br> and Europe (TBA!)
+					</p>
+				</td>
+
+				<td id="pastshows">
+					<table>
+
+						<?php
+					$hostname = "plumesshows.db.9039704.hostedresource.com";
+					$usertable = "shows";
+
+					mysql_connect($hostname, "plumesshows", "ge055rGe055r!") OR DIE ("Unable to 
+						connect to database! Please try again later.");
+					mysql_select_db("plumesshows");
+
+					$query = "SELECT * FROM $usertable ORDER BY date";
+					$result = mysql_query($query);
+
+					if ($result) {
+						while($row = mysql_fetch_array($result)) {
+							$city = $row["city"];
+							$area = $row["area"];
+							$date = date('M d', strtotime($row["date"]));
+							$venue = $row["venue"];
+
+							echo "<tr>
+								<td width=\"70\">$date</td>
+							<td width=\"150\">$city, $area</td>
+							<td>$venue</td>
+							</td>";
+						}
+					}
+
+					?>
+				</table>
+			</td>
+		</table>
+
+	</div>	
+
+	<div class="page" id="PRESS" width="450" style="width: 400px; text-align: justify">
+
+	<?php
+		$hostname = "plumesshows.db.9039704.hostedresource.com";
+		$usertable = "shows";
+
+		mysql_connect($hostname, "plumesshows", "ge055rGe055r!") OR DIE ("Unable to 
+			connect to database! Please try again later.");
+		mysql_select_db("plumesshows");
+
+		$query = "SELECT *  FROM press WHERE site_order > 0 AND include_excerpt = 1 ORDER BY site_order DESC";
+		$result = mysql_query($query);
+
+		if ($result) {
+			while($row = mysql_fetch_array($result)) {
+				if ($row["include_excerpt"] == 1)
+				{
+					echo $row["excerpt"];
+				}
+			}
+		}
+
+	?>
+
 </div>
 
-
-
 </div>
-
-<!-- the old bandsintown code >
-<script type="text/javascript">
-var widget = new BIT.Widget({"artist": "Plumes", "div_id": "TOUR"});
-widget.insert_events();
-</script>
-<-->
-
-
 
 </body>
 
