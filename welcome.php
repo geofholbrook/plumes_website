@@ -3,8 +3,7 @@
 <html>
 <head>
 	
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+	
 	<script src="jquery-1.9.1.min.js">
 	</script>
 
@@ -286,7 +285,7 @@
 
 		<center>
 			<div>
-				<iframe style="border: 0; width: 100%; height: 120px;" src="http://bandcamp.com/EmbeddedPlayer/album=3530073123/size=medium/bgcol=ffffff/linkcol=0687f5/t=3/transparent=true/" seamless><a href="http://plumesensemble.bandcamp.com/album/plumes">Plumes by Plumes</a></iframe>
+				<iframe style="border: 0; width: 500px; height: 120px;" src="http://bandcamp.com/EmbeddedPlayer/album=3530073123/size=medium/bgcol=ffffff/linkcol=0687f5/t=3/transparent=true/" seamless><a href="http://plumesensemble.bandcamp.com/album/plumes">Plumes by Plumes</a></iframe>
 				<br>	
 
 				<a href        = "https://itunes.apple.com/ca/artist/plumes/id583281788" target="blank">
