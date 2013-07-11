@@ -3,6 +3,7 @@
 <html>
 <head>
 	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	
 	<script src="jquery-1.9.1.min.js">
 	</script>
@@ -222,18 +223,24 @@
 
 
 	<?php
-    // connect to database
+    	// connect to database
+        $hostname = "plumesdata.db.9039704.hostedresource.com";
+        $username = "plumesdata";
+		$dbname = $username;
+        $password = "ge055rGe055r!";
 
-            $hostname = "plumesdata.db.9039704.hostedresource.com";
-            $username = "plumesdata";
-			$dbname = $username;
-            $password = "ge055rGe055r!";
-
-            //Connecting to your database
-            mysql_connect($hostname, $username, $password) OR DIE ("Unable to 
-            connect to database! Please try again later.");
-            mysql_select_db($dbname);
+        //Connecting to your database
+        $dbLink = mysql_connect($hostname, $username, $password) OR DIE ("Unable to 
+        connect to database! Please try again later.");
+           
+		mysql_query("SET character_set_results=utf8", $dbLink);
+	    mb_language('uni'); 
+	    mb_internal_encoding('UTF-8');
 	
+		mysql_select_db($dbname, $dbLink);
+
+		// ini_set("default_charset", 'utf-8');		 // someone else's advice...
+		mysql_query("set names 'utf8'", $dbLink);
 	?>
 
 
@@ -387,7 +394,7 @@
 
 	</div>	
 
-	<div class="page" id="PRESS" width="900" style="width: 900px; text-align: justify">
+	<div class="page" id="PRESS"  style="width: 850px; text-align: justify">
 
 		<table>
 			<tr>

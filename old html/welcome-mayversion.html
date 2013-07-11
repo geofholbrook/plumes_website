@@ -33,11 +33,14 @@
 				else
 					$(this).css({ 'font-weight': 'normal' }) });
 		  	
-		  	// fadebackground?
-			if ( fadepages.indexOf(id) != -1) 
-			$("#curtain").fadeTo(1000, fadelevel[id])
-			else
-			$("#curtain").fadeTo(750, 0);
+		  	// fade curtain?
+			if (jQuery.support.opacity)  // curtain fading doesn't work in IE?!
+			{
+				if ( fadepages.indexOf(id) != -1) 
+				$("#curtain").fadeTo(1000, fadelevel[id])
+				else
+				$("#curtain").fadeTo(750, 0);
+			}
 			
 			
 		  	

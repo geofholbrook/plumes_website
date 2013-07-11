@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -32,11 +33,14 @@
 				else
 					$(this).css({ 'font-weight': 'normal' }) });
 		  	
-		  	// fadebackground?
-			if ( fadepages.indexOf(id) != -1) 
-			$("#curtain").fadeTo(1000, fadelevel[id])
-			else
-			$("#curtain").fadeTo(750, 0);
+		  	// fade curtain?
+			if (jQuery.support.opacity)  // curtain fading doesn't work in IE?!
+			{
+				if ( fadepages.indexOf(id) != -1) 
+				$("#curtain").fadeTo(1000, fadelevel[id])
+				else
+				$("#curtain").fadeTo(750, 0);
+			}
 			
 			
 		  	
@@ -52,8 +56,18 @@
 		});
 		
 		</script>
+		
+
+
+
 
 		<style type="text/css">
+			
+			a:link {text-decoration:none;}
+			a:visited {text-decoration:none;}
+			a:hover {text-decoration:underline;}
+			a:active {text-decoration:underline;}
+			
 			body {
 					background-image:url('images/web-background.jpg');
 					background-position:center -100px; 
@@ -98,7 +112,7 @@
 				{
 					display:none;
 					position:absolute;
-					font:14px arial;
+					font:14px times;
 					
 					color:white;
 					left:75px;
@@ -122,18 +136,38 @@
 					left:-20px;
 					top:0px;
 					display:none;
+					
 				}
 				
 			#ABOUT {
 				width: 400px;
 				text-align: justify
-					}							 
+					}	
+					
+			.menuitem {
+				cursor: pointer;
+					  }
+					  						 
 		</style>
 	</head>
 
 	
 
 	<body link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+
+			<script type="text/javascript">
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-39032867-1']);
+			  _gaq.push(['_trackPageview']);
+			
+			  (function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+			
+			</script>
 
 	<div id="curtain"> </div>
 		
@@ -172,22 +206,29 @@
 	    -->
 
 
+			
 	
 			<div class="page" id="PHOTOS">
 				<div width="25"></div>
-				<img src="images/coney.jpg" height="200"> </img>
-				<img src="images/glasslands.jpg" height="200"> </img>
-				<img src="images/eveline-hipsta.jpg" height="200"> </img>
 				
+				<a href="images/PLUMES-PRESS3.jpg" target="_blank">
+					<img src="images/PLUMES-PRESS3-THUMB.jpg" height="200"> </img>  </a>
+				
+				<a href="images/PLUMES-PRESS1.jpg" target="_blank">
+					<img src="images/PLUMES-PRESS1-THUMB.jpg" height="200"> </img>  </a>
+					
+				<a href="images/PLUMES-PRESS2.jpg" target="_blank">
+					<img src="images/PLUMES-PRESS2-THUMB.jpg" height="200"> </img>  </a>
 				<br>
-				
-				<img src="images/yellow.jpg" height="200"> </img>
-				<img src="images/veronica_rainbow.jpg" height="200"> </img>
-				<img src="images/preston_small.jpg" height="200"> </img>
+				<br>
+				(click on an image for hi-res version)
 				
 				</div>
 	
-			<div class="page" id="ABOUT" width="450">
+			<div class="page" id="ABOUT" width="450" 
+					style="background-color:white; color:black; opacity:0.8; padding:10px;
+							font-size:14px; font-family:Arial, arial, sans-serif;">
+				
 				<p>Plumes is a hybrid pop/classical group originating from
 				Montr&eacute;al, whose recent "homes away from homes" have included
 				New York City and Paris. Singer/guitarist and songwriter Veronica Charnley,
@@ -196,7 +237,7 @@
 				Geof Holbrook, harpist &Eacute;veline Gr&eacute;goire-Rousseau, drummer Noel Webb (Skydiggers) and an 
 				expanding cast of orchestral players.</p>
 				
-				<p>On the group's eponymous full-length, released in July 2012 by Bam Records, 
+				<p>On the group's eponymous full-length, released in July 2012, 
 				Charnley's inventive songwriting is supported by arrangements for
 				string quartets, brass quintets, clarinets and
 				violas, and even a full orchestra in a central eight-minute track 
@@ -251,7 +292,8 @@
 															text-align: justify
 																">
 
-				<div style="position:relative; left: 50px;">
+				<div style="position:relative; left: 50px; 
+					background-color:white; color:black; opacity:0.8; padding:10px">
 				&ldquo;The ambitious musical partnership has reached sublime new heights
 				on their debut as Plumes. With an eight-minute, Debussy-inspired,
 				fully-orchestrated centrepiece based upon the Greek myth of Hero and
@@ -261,17 +303,19 @@
 				<br><br>&nbsp;<i> Scott A. Gray, Exclaim! Magazine</i>
 				</div> 
 
-				<div style="position:relative; left: 250px; top: 20px;">
+				<div style="position:relative; left: 250px; top: 20px; 
+					background-color:white; color:black; opacity:0.8; padding:10px">
 				&ldquo;Plumes&#8217;
 				self-titled LP is a carefully constructed Baroque masterpiece, filled
 				with orchestrated meditations on the peaks and valleys of love. This duo
-				have written life’s epic soundtrack, and their vision can&#8217;t be
+				have written life's epic soundtrack, and their vision can&#8217;t be
 				overstated. I suggest you park yourself immediately and pop this magic
 				in your ears. Plumes ... I don&#8217;t know where you came from, but thank you.&rdquo;
 				<br><br>&nbsp;<i> Mike Levine, The NYC Deli Magazine </i>
 				</div>
 				
-				<div style="position:relative; left: 450px; top: 40px;">
+				<div style="position:relative; left: 450px; top: 40px; 
+					background-color:white; color:black; opacity:0.8; padding:10px">
 				&ldquo;This musical duo have
 				created an ambitious, textured, and at times epic record. With its
 				assortment of strings, various brass arrangements, guitars, and so much
