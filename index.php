@@ -328,7 +328,7 @@
 	</div>
 
 
-	<div class       = "page" id="LISTEN">
+	<div class="page" id="LISTEN">
 
 		<center>
 			<div>
@@ -425,10 +425,9 @@
 					?>   
 					</table>
 				</td>
-			</tr?
+			</tr>
 		</table>
-
-	</div>	
+	</div>
 
 	<div class="page" id="PRESS"  style="width: 850px; text-align: justify">
 
