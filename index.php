@@ -93,10 +93,8 @@
 
 	<style type="text/css">
 
-	a:link {text-decoration:none;}
-	a:visited {text-decoration:none;}
-	a:hover {text-decoration:underline;}
-	a:active {text-decoration:underline;}
+	
+ 
 
 	body {
 		background-image:url('images/web-background.jpg');
@@ -185,6 +183,8 @@
 
 	}
 
+	table.menu a {color:#FFFFFF;}
+
 	#ABOUT {
 		width: 400px;
 		text-align: justify;	
@@ -197,6 +197,10 @@
 	}
 	
 	#ABOUT a { color:blue; }	
+
+	#TOUR a:link { color:#8888FF; }
+	#TOUR a:visited { color:#8888FF; }
+	#TOUR a:hover { color:#FF5555; }
 
 	.menuitem {
 		cursor: pointer;
@@ -221,7 +225,7 @@
 
 
 
-<body link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<body>
 
 
 	<?php
@@ -246,8 +250,9 @@
 	?>
 
 
-	<script type="text/javascript">
 
+	<script type="text/javascript">
+	// google analytics
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-39032867-1']);
 	_gaq.push(['_trackPageview']);
@@ -259,8 +264,9 @@
 		s.parentNode.insertBefore(ga, s);
 		})();
 	
-
 	</script>
+
+
 
 	<div id="curtain"> </div>
 
@@ -353,45 +359,73 @@
 
 		<table class="shows">
 			<tr height="30">
-				<th width="400">UPCOMING SHOWS</th>
-				<th>RECENT SHOWS</th>
+				<th width="450">FUTURE SHOWS</th>
+				<th width="450">PAST SHOWS</th>
 			</tr>
 
 			<tr class="top" height="700">
-				<td>
-					<p>
-						Fall 2013: (recording)<br>
-						<br>
-						Spring 2014: shows in Canada, USA <br> and Europe (TBA!)
-					</p>
-				</td>
 
-				<td id="pastshows">
+				<?php 
+					function make_show_line($row)
+					{
+						$city = $row["city"];
+						$area = $row["area"];
+						$date = date('M d Y', strtotime($row["date"]));
+						$link = $row["link"];
+						$venue = $row["venue"];
+
+						if ($link) {
+							$venue_line = "<a href=$link>$venue</a>";
+						} 
+						else
+							$venue_line = $venue;
+
+						echo "<tr>
+							<td width=\"110\">$date</td>
+						<td width=\"150\">$city, $area</td>
+						<td>$venue_line</td>
+						</td>";
+					} ?>
+
+				<td id="futureshows" width="450" 
+					link="#0000FF" vlink="#800080" alink="#FF0000">
+
 					<table>
 
 					<?php
 					
-					$query = "SELECT * FROM shows ORDER BY date";
+					$query = "SELECT * FROM shows WHERE date >= CURRENT_DATE() ORDER BY date";
 					$result = mysql_query($query);
 
 					if ($result) {
 						while($row = mysql_fetch_array($result)) {
-							$city = $row["city"];
-							$area = $row["area"];
-							$date = date('M d', strtotime($row["date"]));
-							$venue = $row["venue"];
+							make_show_line($row);
+						}
+					}
+					
+					?>  
 
-							echo "<tr>
-								<td width=\"70\">$date</td>
-							<td width=\"150\">$city, $area</td>
-							<td>$venue</td>
-							</td>";
+					</table>
+				</td>
+
+				<td id="pastshows" width="450">
+					<table>
+
+					<?php
+					
+					$query = "SELECT * FROM shows WHERE date < CURRENT_DATE() ORDER BY date DESC";
+					$result = mysql_query($query);
+
+					if ($result) {
+						while($row = mysql_fetch_array($result)) {
+							make_show_line($row);
 						}
 					}
 					
 					?>   
-				</table>
-			</td>
+					</table>
+				</td>
+			</tr?
 		</table>
 
 	</div>	
