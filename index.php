@@ -290,9 +290,7 @@
 				<td><a href="http://www.twitter.com/plumesensemble" target="blank">
 					<img height="40" width="40" src="images/t_logo.jpg"></img>
 				</a></td>
-				<td><a href="http://www.plumesensemble.com/chambermusic" target="blank">
-					<i>PLUMES ENSEMBLE</i>
-				</a></td>
+
 			</tr>
 		</table>
 
